@@ -3,9 +3,10 @@ import { Client, TablesDB, ID, Query } from "appwrite";
 const PROJECT_ID = import.meta.env.VITE_APPWRITE_PROJECT_ID;
 const DATABASE_ID = import.meta.env.VITE_APPWRITE_DB_KEY;
 const TABLE_ID = import.meta.env.VITE_APPWRITE_TABLE_KEY;
+const END_POINT = import.meta.env.VITE_APPWRITE_ENDPOINT;
 
 const client = new Client()
-  .setEndpoint("https://cloud.appwrite.io/v1") // use the exact region host from Console
+  .setEndpoint(END_POINT) // use the exact region host from Console
   .setProject(PROJECT_ID);
 
 const tables = new TablesDB(client);
