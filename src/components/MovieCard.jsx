@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const MovieCard = ({
   movie: { title, vote_average, poster_path, release_date, original_language },
 }) => {
@@ -31,6 +33,16 @@ const MovieCard = ({
       </div>
     </div>
   );
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    original_language: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default MovieCard;
